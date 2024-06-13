@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .error {
+            color: red;
+        }
+        #box{
+            box-shadow: 2px 4px 40px -2px rgb(55, 51, 51);
+            
+        }
+      
+    </style>
+</head>
+
+<body class="bg-gray-100 flex items-center justify-center gap-12 overflow-hidden">
+    <div class="bg-white flex  flex-col  rounded-lg p-46 h-96 w-96 ">
+        <h2 class="text-7xl font-bold mb-4 tracking-wide">Contact</h2>
+        <p class="pt-4 tracking-normal text-xl font-semibold">Contact us to report a problem, <br> clarify any doubts about us,<br>or  just find out more.</p>
+        </div> <!--heading-->
+
+
+        <div class=" border-grey border rounded-md p-8  mt-32 h-screen " id="box">
+                    <form id="contactForm" class="space-y-4 flex flex-col ">
+                        <div>
+                            <label for="name" class="block text-sm font-medium mt-8">Your Name</label>
+                            <input type="text" id="name" name="name" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 border-gray-950" placeholder="Your Name" >
+                            <p id="nameError" class="error hidden">Please enter your name.</p>
+                        </div>
+                        <div class="flex justify-center items-center gap-2">
+                                <div>
+
+                                    <label for="email" class="block text-sm font-medium">Your Email</label>
+                                    <input type="email" id="email" name="email" class="mt-1 block w-48 border border-gray-300 rounded-md shadow-sm p-2 border-gray-950" placeholder="Your Email" >
+                                    <p id="emailError" class="error hidden">Please enter a valid email address.</p>
+                                </div>
+                                
+                                <div>
+
+                                    <label for="subject" class="block text-sm font-medium">Subject</label>
+                                    <select id="subject" name="subject" class="mt-1 block w-48 border border-gray-300 rounded-md shadow-sm p-2 border-gray-950 " >
+                                            <option value="">Choose a subject</option>
+                                            <option value="report">Report a problem</option>
+                                            <option value="clarify">Clarify a doubt</option>
+                                            <option value="findout">Find out more</option>
+                                    </select>
+                                    <p id="subjectError" class="error hidden">Please choose a subject.</p>
+                                </div>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium">Message</label>
+                            <textarea id="message" name="message" class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 border-gray-950" rows="4" placeholder="Write a message" ></textarea>
+                            <p id="messageError" class="error hidden">Please write a message.</p>
+                        </div>
+                        <div class="flex items-center">
+                            <input type="checkbox" id="terms" name="terms" class="mr-2" required>
+                            <label for="terms" class="text-sm">I accept <a href="#" class="text-red-500 underline">Terms and Conditions</a> and <a href="#" class="text-red-500 underline">Legal & Privacy</a></label>
+                            <p id="termsError" class="error hidden">You must accept the terms.</p>
+                        </div>
+                        <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded-md shadow-lg hover:shadow-red-500/50">Send message</button>
+                    </form>
+        </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Clear previous errors
+            clearErrors();
+
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value.trim();
+            const terms = document.getElementById('terms').checked;
+
+            let isValid = true;
+
+            if (!name) {
+                showError('nameError', 'Please enter your name.');
+                isValid = false;
+            }
+
+            if (!email || !validateEmail(email)) {
+                showError('emailError', 'Please enter a valid email address.');
+                isValid = false;
+            }
+
+            if (!subject) {
+                showError('subjectError', 'Please choose a subject.');
+                isValid = false;
+            }
+
+            if (!message) {
+                showError('messageError', 'Please write a message.');
+                isValid = false;
+            }
+
+            if (!terms) {
+                showError('termsError', 'You must accept the terms.');
+                isValid = false;
+            }
+
+            if (isValid) {
+                alert('Message sent successfully!');
+                // Form is valid, you can now send the data to the server or handle it as required
+            }
+        });
+
+        function validateEmail(email) {
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(String(email).toLowerCase());
+        }
+
+        function showError(id, message) {
+            const errorElement = document.getElementById(id);
+            errorElement.textContent = message;
+            errorElement.classList.remove('hidden');
+        }
+
+        function clearErrors() {
+            const errors = document.querySelectorAll('.error');
+            errors.forEach(error => {
+                error.classList.add('hidden');
+            });
+        }
+    </script>
+</body>
+
+</html>
