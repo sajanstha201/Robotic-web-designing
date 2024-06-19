@@ -1,0 +1,61 @@
+*{
+    padding: 0px;
+     margin: 0px;
+}
+
+footer{
+    
+     background-color: rgb(182, 179, 179);
+     margin-top: 255px;
+     padding-bottom: 20px;
+     
+}
+
+.color{
+    color: red;
+
+
+}
+
+#main{
+    display: flex;
+    gap: 70px;
+}
+
+#firstrow{
+    margin-left: 30px;
+}
+
+.store{
+    width: 150px;
+    height: 50px;
+}
+
+.appstore{
+    margin-left: 360px;
+}
+
+.logo img{
+    height: 50px;
+    width: 50px;
+    
+  
+}
+
+.logo{
+    margin-left: 680px;
+}
+
+#in{
+    height: 50px;
+    width: 70px;
+}
+
+#x{
+    border-radius: 50%;
+}
+
+p{
+    font-size: larger;
+    margin-left: 7px;
+}
