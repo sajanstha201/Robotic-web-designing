@@ -3,223 +3,179 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Converter Help Center</title>
+    <title>FAQs for PDF Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <!-- Include Tailwind CSS -->
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-RrcjOtowZqZLgOfO8MoRsYKJyvZS3a0TuvjZn6p8A1o1C2g5M4Fk3WqnV7BvE5K4cb6aL+J1vELH2HlLZGnpfQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <style>
-        /* Custom styles for better UI */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            background-color: #f3f4f6;
-        }
-        .card {
-            border-radius: 0.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .section-image {
-            max-width: 100%;
-            height: auto;
-            border-radius: 0.5rem;
-        }
-        .form-checkbox:checked + .form-label::before {
-            background-color: #3b82f6;
-            border-color: #3b82f6;
-        }
-        .form-checkbox:checked:focus + .form-label::before {
-            box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.5);
-        }
-    </style>
 </head>
-<body class="bg-gray-100">
-    <header class="container mx-auto py-8 px-4">
-        <h1 class="text-4xl font-extrabold mb-6 text-center text-blue-600">PDF Converter Help Center</h1>
-    </header>
+<body class="bg-gray-100 text-gray-900 font-sans">
 
-    <div class="container mx-auto py-8 px-4 grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        <!-- Conversion Settings -->
-        <section class="card bg-white text-gray-800 p-6 flex flex-col justify-between shadow-lg">
-            <div>
-                <h2 class="text-xl font-semibold mb-4 text-blue-600">Conversion Settings</h2>
-                <div class="mb-4">
-                    <label for="file-type" class="block font-medium text-gray-700 mb-1">Choose a file type:</label>
-                    <select id="file-type" class="form-select">
-                        <option value="pdf">PDF</option>
-                        <option value="docx">Word Document</option>
-                        <option value="xlsx">Excel Spreadsheet</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="create-bookmarks" class="form-checkbox">
-                    <label for="create-bookmarks" class="form-label text-gray-700 ml-2">Create tagged bookmarks for each converted web page</label>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="create-pdf-tags" class="form-checkbox">
-                    <label for="create-pdf-tags" class="form-label text-gray-700 ml-2">Store a structure in the PDF that corresponds to the HTML structure of the web pages</label>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="place-headers-footers" class="form-checkbox">
-                    <label for="place-headers-footers" class="form-label text-gray-700 ml-2">Place a header and footer on every page</label>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="include-header-footer" class="form-checkbox">
-                    <label for="include-header-footer" class="form-label text-gray-700 ml-2">Include custom header and footer</label>
-                </div>
-                <div id="header-footer-options" class="hidden">
-                    <div class="mb-2">
-                        <label for="header-content" class="block font-medium text-gray-700 mb-1">Header Content:</label>
-                        <textarea id="header-content" class="form-textarea w-full" rows="3"></textarea>
-                    </div>
-                    <div class="mb-2">
-                        <label for="footer-content" class="block font-medium text-gray-700 mb-1">Footer Content:</label>
-                        <textarea id="footer-content" class="form-textarea w-full" rows="3"></textarea>
-                    </div>
-                </div>
-                <div class="mb-4">
-                    <label for="color-theme" class="block font-medium text-gray-700 mb-1">Color Theme:</label>
-                    <select id="color-theme" class="form-select">
-                        <option value="light">Light</option>
-                        <option value="dark">Dark</option>
-                        <option value="custom">Custom</option>
-                    </select>
-                </div>
-            </div>
-            <div class="mt-auto">
-                <button id="convert-to-pdf" class="btn bg-blue-500 hover:bg-blue-600 text-white w-full py-2 flex items-center justify-center">
-                    <i class="fas fa-file-pdf mr-2"></i> Convert Web Page to PDF
-                </button>
-            </div>
-            <img src="https://via.placeholder.com/300" alt="Section Image" class="section-image mt-4">
-        </section>
+<div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-lg mt-10">
 
-        <!-- Page Layout -->
-        <section class="card bg-white text-gray-800 p-6 flex flex-col justify-between shadow-lg">
-            <div>
-                <h2 class="text-xl font-semibold mb-4 text-blue-600">Page Layout</h2>
-                <div class="mb-4">
-                    <label for="page-size" class="block font-medium text-gray-700 mb-1">Page Size:</label>
-                    <select id="page-size" class="form-select">
-                        <option value="A4">A4</option>
-                        <option value="Letter">Letter</option>
-                        <option value="Legal">Legal</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="scale-wide-contents" class="form-checkbox">
-                    <label for="scale-wide-contents" class="form-label text-gray-700 ml-2">Scale wide contents to fit page</label>
-                </div>
-                <div class="mb-4">
-                    <label for="switch-to-landscape" class="block font-medium text-gray-700 mb-1">Switch to Landscape if Scaled Smaller Than:</label>
-                    <div class="flex items-center">
-                        <input type="number" id="switch-to-landscape" value="50" class="form-input w-16 mr-2">
-                        <span class="text-gray-700">%</span>
-                    </div>
-                </div>
-            </div>
-            <div class="mt-auto">
-                <button id="add-to-existing-pdf" class="btn bg-blue-500 hover:bg-blue-600 text-white w-full py-2 flex items-center justify-center">
-                    <i class="fas fa-plus-circle mr-2"></i> Add to Existing PDF
-                </button>
-            </div>
-            <img src="https://via.placeholder.com/300" alt="Section Image" class="section-image mt-4">
-        </section>
+    <h1 class="text-center text-3xl text-blue-500 mb-8 font-bold">FAQs for PDF Converter</h1>
 
-        <!-- HTML Conversion Settings -->
-        <section class="card bg-white text-gray-800 p-6 flex flex-col justify-between shadow-lg">
-            <div>
-                <h2 class="text-xl font-semibold mb-4 text-blue-600">HTML Conversion Settings</h2>
-                <div class="mb-4">
-                    <button id="create-pdf-online" class="btn bg-blue-500 hover:bg-blue-600 text-white w-full py-2 flex items-center justify-center">
-                        <i class="fas fa-cloud-download-alt mr-2"></i> Create PDF Online
-                    </button>
-                </div>
-                <div class="mb-4">
-                    <label for="add-watermark" class="block font-medium text-gray-700 mb-1">Add Watermark:</label>
-                    <input type="text" id="add-watermark" class="form-input" placeholder="Enter watermark text">
-                </div>
-                <div class="mb-4">
-                    <label for="compression-level" class="block font-medium text-gray-700 mb-1">Compression Level:</label>
-                    <select id="compression-level" class="form-select">
-                        <option value="low">Low</option>
-                        <option value="medium">Medium</option>
-                        <option value="high">High</option>
-                    </select>
-                </div>
-                <div class="mb-4">
-                    <input type="checkbox" id="encrypt-pdf" class="form-checkbox">
-                    <label for="encrypt-pdf" class="form-label text-gray-700 ml-2">Encrypt PDF with password</label>
-                </div>
-                <div id="encryption-options" class="hidden">
-                    <div class="mb-2">
-                        <label for="encryption-password" class="block font-medium text-gray-700 mb-1">Password:</label>
-                        <input type="password" id="encryption-password" class="form-input" placeholder="Enter password">
-                    </div>
-                    <div class="mb-2">
-                        <label for="encryption-confirm-password" class="block font-medium text-gray-700 mb-1">Confirm Password:</label>
-                        <input type="password" id="encryption-confirm-password" class="form-input" placeholder="Confirm password">
-                    </div>
-                </div>
-            </div>
-            <div class="mt-auto">
-                <img src="https://via.placeholder.com/300" alt="Section Image" class="section-image mt-4">
-            </div>
-        </section>
+    <div class="space-y-4">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(1)">
+                1. What is a PDF Converter?
+            </p>
+            <p class="answer hidden text-gray-700">
+                A PDF Converter is a software tool or online service that allows you to convert files from various formats (e.g., Word, Excel, JPEG) into PDF format, or vice versa.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(2)">
+                2. Why would I need a PDF Converter?
+            </p>
+            <p class="answer hidden text-gray-700">
+                PDFs are widely used for their portability and compatibility across different platforms. Converting files to PDF format ensures that your documents retain formatting and are easily shared and viewed by others.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(3)">
+                3. How do I use a PDF Converter?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Using a PDF Converter typically involves uploading your file to the converter tool, selecting the desired output format (e.g., PDF to Word or Word to PDF), and then initiating the conversion process. Most converters guide you through these steps with user-friendly interfaces.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(4)">
+                4. Can I convert scanned documents into PDF format?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Yes, many PDF converters support Optical Character Recognition (OCR) technology, which allows you to convert scanned documents (images) into editable PDFs.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(5)">
+                5. Are PDF Converters safe to use?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Yes, reputable PDF converters prioritize user security and data privacy. However, it's essential to use converters from trusted sources and be cautious with sensitive information.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(6)">
+                6. Do I need to download software to use a PDF Converter?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Not necessarily. Many PDF converters are available online as web-based tools, eliminating the need for downloading software. Some converters also offer desktop applications for offline use.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(7)">
+                7. Are there free PDF Converter options available?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Yes, there are several free PDF converters available online. However, the features and conversion limits may vary compared to paid versions. Evaluate based on your specific needs.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(8)">
+                8. Can PDF Converters handle large files?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Most PDF converters have file size limitations. Check the converter’s specifications to ensure your file size is within the supported range. Some converters offer premium versions for larger files.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(9)">
+                9. What file formats can be converted to PDF?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Common file formats that can be converted to PDF include Word documents (DOC/DOCX), Excel spreadsheets (XLS/XLSX), PowerPoint presentations (PPT/PPTX), images (JPEG, PNG, TIFF), and more.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(10)">
+                10. Is there technical support available for PDF Converters?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Reputable PDF converter providers usually offer customer support through FAQs, tutorials, email support, or live chat for troubleshooting and assistance.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(11)">
+                11. Can I convert PDF files back into other formats?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Yes, many PDF converters support converting PDF files back into editable formats like Word, Excel, or images depending on the converter’s capabilities.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(12)">
+                12. Are there limits to how many files I can convert using a PDF Converter?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Free versions of PDF converters may have limits on the number of files or the file size you can convert within a given period. Paid versions often offer higher limits or unlimited conversions.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(13)">
+                13. How accurate are the conversions done by PDF Converters?
+            </p>
+            <p class="answer hidden text-gray-700">
+                The accuracy of conversions depends on the quality of the converter and the complexity of the document. Text-based conversions (e.g., Word to PDF) generally maintain high accuracy, while complex layouts or images may require more advanced tools.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(14)">
+                14. Can PDF Converters preserve hyperlinks and formatting?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Yes, reputable PDF converters strive to preserve hyperlinks, fonts, images, and formatting during the conversion process to ensure the document looks as close as possible to the original.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
+        <div class="faq-item">
+            <p class="question cursor-pointer text-blue-500 mb-2 font-semibold" onclick="toggleAnswer(15)">
+                15. Do PDF Converters work on mobile devices?
+            </p>
+            <p class="answer hidden text-gray-700">
+                Yes, many PDF converters offer mobile-friendly versions or apps that allow you to convert files directly from your smartphone or tablet.
+            </p>
+        </div>
+        <hr class="my-4 border-t border-gray-300">
+
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-wi5K0Bd5igS0+3nn7wFtbkrZC9nV3I+Qr9G6c20maM5KmzTlS5efGdY0xQ5uSs04/b6Kg2MB7oHf+JiAp65Kcw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</div>
 
-    <script>
-        // JavaScript functionality remains unchanged
-        function ConvertToPDFWebJobAPIAsync(url) {
-            // Implement your logic here
-            console.log("Convert to PDF clicked.");
-        }
-        
-        function AddToExistingPDF(url, existingPdf) {
-            // Implement your logic here
-            console.log("Add to Existing PDF clicked.");
-        }
-        
-        function CreatePDFOnline(url) {
-            // Implement your logic here
-            console.log("Create PDF Online clicked.");
-        }
+<script>
+    function toggleAnswer(index) {
+        const answer = document.querySelectorAll('.answer')[index - 1];
+        answer.classList.toggle('hidden');
+    }
+</script>
 
-        // Toggle header and footer options visibility
-        document.getElementById("include-header-footer").addEventListener("change", function() {
-            var headerFooterOptions = document.getElementById("header-footer-options");
-            if (this.checked) {
-                headerFooterOptions.classList.remove("hidden");
-            } else {
-                headerFooterOptions.classList.add("hidden");
-            }
-        });
-
-        // Toggle encryption options visibility
-        document.getElementById("encrypt-pdf").addEventListener("change", function() {
-            var encryptionOptions = document.getElementById("encryption-options");
-            if (this.checked) {
-                encryptionOptions.classList.remove("hidden");
-            } else {
-                encryptionOptions.classList.add("hidden");
-            }
-        });
-
-        document.getElementById("convert-to-pdf").addEventListener("click", function() {
-            ConvertToPDFWebJobAPIAsync("https://example.com");
-        });
-        
-        document.getElementById("add-to-existing-pdf").addEventListener("click", function() {
-            AddToExistingPDF("https://example.com", "existing-pdf.pdf");
-        });
-        
-        document.getElementById("create-pdf-online").addEventListener("click", function() {
-            CreatePDFOnline("https://example.com");
-        });
-    </script>
 </body>
 </html>
