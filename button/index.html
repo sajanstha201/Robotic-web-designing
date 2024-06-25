@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button</title>
+   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+       
+        .custom-button {
+            background-color: white;
+            color: black;
+         
+        }
+
+        .custom-button.active {
+            background-color: rgb(185, 28, 28);
+            color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .custom-button:hover {
+            transform: scale(1.1); 
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid d-grid gap-2 bg-info p-4">
+        <div>
+            <button id="btnAccount" class="col-3 rounded-3 mt-3 btn btn-lg btn-white custom-button border">Account Information</button>
+        </div>
+        <div>
+            <button id="btnNotification" class="col-3 rounded-3 mt-3 btn btn-lg btn-white custom-button border">Notification</button>
+        </div>
+        <div>
+            <button id="btnMembership" class="col-3 rounded-3 mt-3 btn btn-lg btn-white custom-button border">Membership Plan</button>
+        </div>
+        <div>
+            <button id="btnSecurity" class="col-3 rounded-3 mt-3 btn btn-lg btn-white custom-button border">Password and Security</button>
+        </div>
+    </div>
+
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buttons = document.querySelectorAll('.custom-button');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                
+                    buttons.forEach(btn => btn.classList.remove('active'));
+
+                 
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

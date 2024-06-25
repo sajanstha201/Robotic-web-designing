@@ -1,0 +1,136 @@
+/* nav{
+    border: 2px solid black;
+    display: flex;
+    background-color: #242424;
+    padding-bottom: 20px;
+   
+} */
+*{
+    margin: 0px;
+    padding: 0px;
+}
+#logo{
+    height: 100px;
+    width: 150px;
+    background-color: white;
+    margin-top: 30px;
+    border-radius: 10px;
+    position: absolute;
+    
+}
+
+#head{
+   margin-left: 550px;
+   margin-top: 40px;
+   
+     
+
+}
+
+.header{
+    margin-left: 20px;
+    color: white;
+    text-decoration: none;
+    font-size: larger;
+}
+
+#login{
+    
+    margin-left: 50px;
+    text-decoration: none;
+    border: 2px red;
+     background-color: red; 
+     padding-left: 25px;
+     padding-right: 25px;
+     padding-bottom: 10px;
+     padding-top: 5px;
+     border-radius: 10px;
+     color: white;
+     font-size: larger;
+}
+
+#top{
+    background-color: #242424;
+    display: flex;
+    padding-bottom: 30px;
+}
+
+#txt{
+    text-align: center;
+    margin-top: 70px;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+#main{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+
+#pdf{
+    border: 2px  solid rgba(0, 0, 0, 0.253);
+    box-shadow:2px 2px 2px  2px rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+   height: 250px;
+   width: 250px;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+   
+    
+}
+
+#pdf_img{
+    height: 90px;
+    width: 90px;
+    align-items: center;
+}
+
+#table{
+    border: 2px  solid rgba(0, 0, 0, 0.253);
+    box-shadow:2px 2px 2px  2px rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+   height: 250px;
+   width: 250px;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+  
+}
+
+#analysis{
+    border: 2px  solid rgba(0, 0, 0, 0.253);
+    box-shadow:2px 2px 2px  2px rgba(0, 0, 0, 0.363);
+    border-radius: 10px;
+   height: 250px;
+   width: 250px;
+    align-items: center;
+    text-align: center;
+    padding: 0px;
+    margin: 0px;
+}
+
+.gg{
+    font-size: larger;
+}
+
+@media screen and (max-width: 768px) {
+    #head {
+        margin-left: 20px;
+    }
+    #txt {
+        font-size: 24px;
+    }
+    #main {
+        flex-direction: column;
+        align-items: center;
+    }
+    #pdf, #table, #analysis {
+        width: 80%; /* Adjust as needed */
+        margin-bottom: 20px; /* Add some space between items */
+    }
+}
